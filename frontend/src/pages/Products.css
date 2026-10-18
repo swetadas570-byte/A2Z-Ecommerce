@@ -1,0 +1,295 @@
+.products-page {
+    min-height: calc(100vh - 73px);
+    padding-bottom: 80px;
+}
+
+
+/* =========================
+   PRODUCTS HEADER
+========================= */
+
+.products-header {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 70px 40px 40px;
+
+    text-align: center;
+}
+
+.products-small-title {
+    margin-bottom: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #4f46e5;
+}
+
+.products-header h1 {
+    margin-bottom: 14px;
+
+    font-size: 44px;
+    font-weight: 800;
+
+    color: #111827;
+}
+
+.products-header > p:last-child {
+    color: #6b7280;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   SEARCH + FILTER
+========================= */
+
+.products-controls {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 40px 40px;
+
+    display: flex;
+
+    gap: 16px;
+
+    align-items: center;
+}
+
+.search-wrapper {
+    position: relative;
+
+    flex: 1;
+}
+
+.search-wrapper input {
+    width: 100%;
+
+    padding: 14px 18px 14px 46px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    background-color: #ffffff;
+
+    color: #111827;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.search-wrapper input:focus {
+    border-color: #4f46e5;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(79, 70, 229, 0.12);
+}
+
+.search-icon {
+    position: absolute;
+
+    left: 16px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 16px;
+
+    pointer-events: none;
+}
+
+.products-controls select {
+    width: 220px;
+
+    padding: 14px 16px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    background-color: #ffffff;
+
+    color: #111827;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.products-controls select:focus {
+    border-color: #4f46e5;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(79, 70, 229, 0.12);
+}
+
+
+/* =========================
+   PRODUCTS GRID
+========================= */
+
+.products-results {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 40px;
+}
+
+.products-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+
+/* =========================
+   MESSAGE STATES
+========================= */
+
+.products-message {
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #6b7280;
+}
+
+.products-message h2 {
+    margin-bottom: 8px;
+
+    color: #111827;
+
+    font-size: 24px;
+}
+
+.products-message p {
+    font-size: 16px;
+}
+
+.empty-products-icon {
+    margin-bottom: 16px;
+
+    font-size: 42px;
+}
+
+.error-message {
+    color: #dc2626;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode .products-small-title {
+    color: #818cf8;
+}
+
+body.dark-mode .products-header h1 {
+    color: #f9fafb;
+}
+
+body.dark-mode .products-header > p:last-child {
+    color: #9ca3af;
+}
+
+body.dark-mode .search-wrapper input,
+body.dark-mode .products-controls select {
+    background-color: #1f2937;
+
+    border-color: #4b5563;
+
+    color: #f9fafb;
+}
+
+body.dark-mode .search-wrapper input::placeholder {
+    color: #9ca3af;
+}
+
+body.dark-mode .products-message h2 {
+    color: #f9fafb;
+}
+
+body.dark-mode .products-message {
+    color: #9ca3af;
+}
+
+
+/* =========================================
+   RESPONSIVE PRODUCTS
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .products-page {
+        padding: 50px 25px 80px;
+    }
+
+    .products-header h1 {
+        font-size: 38px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products-controls {
+        gap: 12px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .products-page {
+        padding: 40px 18px 60px;
+    }
+
+    .products-header h1 {
+        font-size: 32px;
+    }
+
+    .products-header p {
+        font-size: 14px;
+    }
+
+    .products-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-wrapper,
+    .products-controls select {
+        width: 100%;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
